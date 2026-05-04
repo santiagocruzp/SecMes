@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-05-04",
+  "notes": "Static prime samples for Prime Lab. Stored as decimal strings.",
+  "samples": [
+    {
+      "id": "p01",
+      "label": "20-digit prime (safe for quick demos)",
+      "source": "static",
+      "notes": "Large enough to feel 'big', still manageable to display.",
+      "prime": "10000000000000000051"
+    },
+    {
+      "id": "p02",
+      "label": "Mersenne prime (2^31 - 1)",
+      "source": "static",
+      "notes": "Classic example: 2147483647 is prime.",
+      "prime": "2147483647"
+    },
+    {
+      "id": "p03",
+      "label": "Large-ish prime (19 digits)",
+      "source": "static",
+      "notes": "Works nicely with quick mod checks and digit counting.",
+      "prime": "2305843009213693951"
+    },
+    {
+      "id": "p04",
+      "label": "Bigger prime (prime near 10^50)",
+      "source": "static",
+      "notes": "Too large for trial division in-browser, but good for display/copy/mod checks.",
+      "prime": "100000000000000000000000000000000000000000000000151"
+    }
+  ]
+}
