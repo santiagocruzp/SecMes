@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Lab</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Prime Lab</h1>
+      <p class="subtitle">
+        A small GitHub Pages demo for exploring prime numbers alongside RSA concepts.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Prime samples (from <code>primes.json</code>)</h2>
+      <p class="muted">
+        Select a pre-generated prime. These are stored as strings so we can handle large values safely.
+      </p>
+
+      <div class="row">
+        <label for="primeSelect">Choose a prime:</label>
+        <select id="primeSelect"></select>
+        <button id="copyPrimeBtn" class="btn">Copy</button>
+      </div>
+
+      <div class="primeBox">
+        <div class="primeMeta" id="primeMeta"></div>
+        <pre class="primeValue" id="primeValue">(loading...)</pre>
+      </div>
+
+      <div class="grid3">
+        <div class="mini">
+          <div class="miniTitle">Digits</div>
+          <div class="miniValue" id="digitsValue">—</div>
+        </div>
+        <div class="mini">
+          <div class="miniTitle">Last 10 digits</div>
+          <div class="miniValue mono" id="lastDigitsValue">—</div>
+        </div>
+        <div class="mini">
+          <div class="miniTitle">Mod checks</div>
+          <div class="miniValue mono" id="modChecksValue">—</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Primality test (quick demo)</h2>
+      <p class="muted">
+        This browser test uses trial division (works well for small numbers). For very large numbers,
+        real applications use probabilistic tests like Miller–Rabin.
+      </p>
+
+      <div class="row">
+        <label for="testInput">Test a number:</label>
+        <input id="testInput" type="text" placeholder="e.g. 97" />
+        <button id="testBtn" class="btn primary">Test</button>
+      </div>
+
+      <div class="result" id="testResult">Enter a number and click Test.</div>
+      <details class="details">
+        <summary>What does “prime” mean?</summary>
+        <p>
+          A prime number has exactly two positive divisors: 1 and itself.
+          Trial division checks whether any integer from 2 up to √n divides n evenly.
+        </p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Why primes matter for RSA (1 minute)</h2>
+      <p>
+        RSA key generation picks two large primes <code>p</code> and <code>q</code>, multiplies them to get
+        <code>n = p·q</code>, and builds keys using modular arithmetic.
+        Multiplication is easy, but factoring <code>n</code> back into <code>p</code> and <code>q</code> is hard
+        when primes are large.
+      </p>
+    </section>
+
+    <footer class="footer muted">
+      Built for classroom demos. Not for cryptographic security.
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
